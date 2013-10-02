@@ -20,6 +20,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+
+// 画面が表示される直前に呼び出されるメソッド　
 - (void)viewWillAppear:(BOOL)animated
 {
   self.view.layer.contents = (id)[UIImage imageNamed:@"bg01.png"].CGImage;
