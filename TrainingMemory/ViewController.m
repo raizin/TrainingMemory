@@ -20,6 +20,13 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+  self.view.layer.contents = (id)[UIImage imageNamed:@"bg01.png"].CGImage;
+
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

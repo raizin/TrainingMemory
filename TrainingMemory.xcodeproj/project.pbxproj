@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5EEEAEC617FC8DC1007A2BFE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */; };
+		5EEEAEC817FC99E6007A2BFE /* bg01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEC717FC99E6007A2BFE /* bg01.png */; };
 		5EF6933017F74AEA0090B9FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6932F17F74AEA0090B9FE /* Foundation.framework */; };
 		5EF6933217F74AEA0090B9FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6933117F74AEA0090B9FE /* CoreGraphics.framework */; };
 		5EF6933417F74AEA0090B9FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6933317F74AEA0090B9FE /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5EEEAEC717FC99E6007A2BFE /* bg01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg01.png; sourceTree = "<group>"; };
 		5EF6932C17F74AEA0090B9FE /* TrainingMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF6932F17F74AEA0090B9FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5EF6933117F74AEA0090B9FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +132,7 @@
 		5EF6933617F74AEA0090B9FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EEEAEC717FC99E6007A2BFE /* bg01.png */,
 				5EF6933717F74AEA0090B9FE /* TrainingMemory-Info.plist */,
 				5EF6933817F74AEA0090B9FE /* InfoPlist.strings */,
 				5EF6933B17F74AEA0090B9FE /* main.m */,
@@ -234,6 +237,7 @@
 			files = (
 				5EF6934817F74AEA0090B9FE /* Images.xcassets in Resources */,
 				5EF6933A17F74AEA0090B9FE /* InfoPlist.strings in Resources */,
+				5EEEAEC817FC99E6007A2BFE /* bg01.png in Resources */,
 				5EF6934317F74AEA0090B9FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
