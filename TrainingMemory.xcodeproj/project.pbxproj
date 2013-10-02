@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EEEAEC617FC8DC1007A2BFE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */; };
 		5EF6933017F74AEA0090B9FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6932F17F74AEA0090B9FE /* Foundation.framework */; };
 		5EF6933217F74AEA0090B9FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6933117F74AEA0090B9FE /* CoreGraphics.framework */; };
 		5EF6933417F74AEA0090B9FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6933317F74AEA0090B9FE /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5EF6932C17F74AEA0090B9FE /* TrainingMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF6932F17F74AEA0090B9FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5EF6933117F74AEA0090B9FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EEEAEC617FC8DC1007A2BFE /* QuartzCore.framework in Frameworks */,
 				5EF6933217F74AEA0090B9FE /* CoreGraphics.framework in Frameworks */,
 				5EF6933417F74AEA0090B9FE /* UIKit.framework in Frameworks */,
 				5EF6933017F74AEA0090B9FE /* Foundation.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		5EF6932E17F74AEA0090B9FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */,
 				5EF6932F17F74AEA0090B9FE /* Foundation.framework */,
 				5EF6933117F74AEA0090B9FE /* CoreGraphics.framework */,
 				5EF6933317F74AEA0090B9FE /* UIKit.framework */,
@@ -381,6 +385,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrainingMemory/TrainingMemory-Prefix.pch";
 				INFOPLIST_FILE = "TrainingMemory/TrainingMemory-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -394,6 +399,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrainingMemory/TrainingMemory-Prefix.pch";
 				INFOPLIST_FILE = "TrainingMemory/TrainingMemory-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,6 +466,7 @@
 				5EF6936017F74AEA0090B9FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EF6936117F74AEA0090B9FE /* Build configuration list for PBXNativeTarget "TrainingMemoryTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +475,7 @@
 				5EF6936317F74AEA0090B9FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
