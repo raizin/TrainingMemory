@@ -15,7 +15,7 @@
 @implementation ViewController
 
 
-// タッチ処理とカードの回転のための関数(※自作)
+// カードの回転のための関数(※自作)
 - (void)flipLayer:(CALayer *)layer
 {
   [CATransaction begin];
@@ -32,6 +32,21 @@
   layer.sublayerTransform = transform;
   [CATransaction commit];
 }
+
+// タッチ処理のための関数(※既存)
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+  UITouch *touch = [touches anyObject];
+  CGPoint pos = [touch locationInView:self.view];
+  
+  CALayer *layer = [self.view.layer hitTest:pos];
+  CALayer *containerLayer = layer.superlayer;
+  if ([containerLayer.name hasPrefix:@"card"]) {
+    containerLayer.zPosition = 10;
+    [self flipLayer:containerLayer];
+  }
+}
+
 
 
 // カードレイヤー(※自作)
