@@ -15,7 +15,26 @@
 @implementation ViewController
 
 
-// カードレイヤー(※自作関数)
+// タッチ処理とカードの回転のための関数(※自作)
+- (void)flipLayer:(CALayer *)layer
+{
+  [CATransaction begin];
+  [CATransaction setAnimationDuration:1.0];
+  CATransform3D transform = CATransform3DIdentity;
+  transform.m34 = -1 / 150.0;
+  if ([layer.name hasSuffix:@"flipped"]) {
+    transform = CATransform3DRotate(transform, 0.0, 0.0, 1.0, 0.0);
+    layer.name = [layer.name stringByDeletingPathExtension];
+  }else{
+    transform = CATransform3DRotate(transform, -M_PI, 0.0, 1.0, 0.0);
+    layer.name = [layer.name stringByAppendingPathExtension:@"flipped"];
+  }
+  layer.sublayerTransform = transform;
+  [CATransaction commit];
+}
+
+
+// カードレイヤー(※自作)
 - (CALayer *)makeCardLayerAtPos: (CGPoint)pos name:(NSString *)name
 {
   CATransform3D perspective = CATransform3DIdentity;
