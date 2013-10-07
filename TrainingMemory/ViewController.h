@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+  CALayer *selectedLayer1;
+  CALayer *selectedLayer2;
+}
 
 @end

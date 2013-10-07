@@ -36,6 +36,14 @@
 // タッチ処理のための関数(※既存)
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  
+  //２枚選択中なら処理しない(戻さない)
+  if (selectedLayer2 != nil) {
+    return;
+  }
+  
+  
+  
   UITouch *touch = [touches anyObject];
   CGPoint pos = [touch locationInView:self.view];
   
@@ -44,9 +52,49 @@
   if ([containerLayer.name hasPrefix:@"card"]) {
     containerLayer.zPosition = 10;
     [self flipLayer:containerLayer];
+    
+    //カードの選択
+    if (selectedLayer1 == nil) {
+      selectedLayer1 = containerLayer;
+    } else {
+      selectedLayer2 = containerLayer;
+      [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(judgeErase) userInfo:nil repeats:NO];
+    }
+    
+    
   }
 }
 
+// カードの整合性判定からカードレイヤー削除へ (※自作)
+- (void)judgeErase
+{
+  if ([selectedLayer1.name isEqualToString:selectedLayer2.name]) {
+    [CATransaction begin];
+    [CATransaction setAnimationDuration:1.0];
+    selectedLayer1.transform = CATransform3DMakeScale(2.0, 2.0, 1.0);
+    selectedLayer2.transform = CATransform3DMakeScale(2.0, 2.0, 1.0);
+    selectedLayer1.opacity = 0.0;
+    selectedLayer2.opacity = 0.0;
+    [CATransaction commit];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(eraseCards) userInfo:nil repeats:NO];
+  } else {
+    [self flipLayer:selectedLayer1];
+    [self flipLayer:selectedLayer2];
+    selectedLayer1.zPosition = 0;
+    selectedLayer2.zPosition = 0;
+    selectedLayer1 = nil;
+    selectedLayer2 = nil;
+  }
+}
+
+// カードレイヤの消去処理
+-(void)eraseCards
+{
+  [selectedLayer1 removeFromSuperlayer];
+  [selectedLayer2 removeFromSuperlayer];
+  selectedLayer1 = nil;
+  selectedLayer2 = nil;
+}
 
 
 // カードレイヤー(※自作)
