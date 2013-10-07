@@ -90,7 +90,7 @@
 // カードレイヤの消去処理
 -(void)eraseCards
 {
-  [selectedLayer1 removeFromSuperlayer];
+  [selectedLayer1 removeFromSuperlayer]; // レイヤーを親レイヤーから削除
   [selectedLayer2 removeFromSuperlayer];
   selectedLayer1 = nil;
   selectedLayer2 = nil;
