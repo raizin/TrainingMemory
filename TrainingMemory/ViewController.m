@@ -132,13 +132,33 @@
 // 画面が表示される直前に呼び出されるメソッド
 - (void)viewWillAppear:(BOOL)animated
 {
+  
+  srand((unsigned int)time(NULL)); // 乱数の初期化
+  
   self.view.layer.contents = (id)[UIImage imageNamed:@"bg01.png"].CGImage; // 背景
   
-  CALayer *layer1 = [self makeCardLayerAtPos:CGPointMake(100, 100) name:@"card1"];
-  CALayer *layer2 = [self makeCardLayerAtPos:CGPointMake(200, 200) name:@"card1"];
+  NSMutableArray *cardNames = [NSMutableArray array];
+  for (int i = 0; i < 6; i++) {
+    [cardNames addObject:[NSString stringWithFormat:@"card%d", i+1]];
+    [cardNames addObject:[NSString stringWithFormat:@"card%d", i+1]];
+  }
   
-  [self.view.layer addSublayer:layer1];
-  [self.view.layer addSublayer:layer2];
+  for (int y = 0; y < 4; y++) {
+    for (int x = 0; x < 3; x++) {
+      int cardIndex = rand() % [cardNames count];
+      NSString *cardName = [cardNames objectAtIndex:cardIndex];
+      [cardNames removeObjectAtIndex:cardIndex];
+      CALayer *layer = [self makeCardLayerAtPos:CGPointMake(x*100+50+10, y*100+50+70) name:cardName];
+      [self.view.layer addSublayer:layer];
+    }
+  }
+  
+  
+//  CALayer *layer1 = [self makeCardLayerAtPos:CGPointMake(100, 100) name:@"card1"];
+//  CALayer *layer2 = [self makeCardLayerAtPos:CGPointMake(200, 200) name:@"card1"];
+//  
+//  [self.view.layer addSublayer:layer1];
+//  [self.view.layer addSublayer:layer2];
   
 }
 
