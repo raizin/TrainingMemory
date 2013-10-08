@@ -50,6 +50,9 @@
   CALayer *layer = [self.view.layer hitTest:pos];
   CALayer *containerLayer = layer.superlayer;
   if ([containerLayer.name hasPrefix:@"card"]) {
+    
+    [soundFlip play];
+    
     containerLayer.zPosition = 10;
     [self flipLayer:containerLayer];
     
@@ -159,8 +162,58 @@
 //  
 //  [self.view.layer addSublayer:layer1];
 //  [self.view.layer addSublayer:layer2];
+
+  
+  // サウンド再生 (プレイ中 BGM)
+  NSURL *bgmURLPlay = [[NSBundle mainBundle] URLForResource:@"MozCD5-01" withExtension:@"mp3"];
+  bgmPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:bgmURLPlay error:NULL];
+  [bgmPlay prepareToPlay];
+  bgmPlay.volume = 0.6;
+  bgmPlay.numberOfLoops = -1; // 再生回数 -1:ループ再生
+  
+  [bgmPlay play]; // 再生開始
+  
+  
+  // サウンド再生 (クリア時のBGM)
+  NSURL *bgmURLClear = [[NSBundle mainBundle] URLForResource:@"bgmClear" withExtension:@"mp3"];
+  bgmClear = [[AVAudioPlayer alloc] initWithContentsOfURL:bgmURLClear error:NULL];
+  [bgmClear prepareToPlay];
+  bgmClear.volume = 0.5;
+  
+  
+  // サウンド再生 (カードめくり 効果音)
+  NSURL *soundURLFlip = [[NSBundle mainBundle] URLForResource:@"soundFlip" withExtension:@"mp3"];
+  soundFlip = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURLFlip error:NULL];
+  [soundFlip prepareToPlay];
+  
+  // サウンド再生 (正解 効果音)
+  NSURL *soundURLOK = [[NSBundle mainBundle] URLForResource:@"soundOK" withExtension:@"mp3"];
+  soundOK = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURLOK error:NULL];
+  [soundOK prepareToPlay];
+  
+  
+  // サウンド再生 (NG 効果音)
+  NSURL *soundURLNG = [[NSBundle mainBundle] URLForResource:@"soundNG" withExtension:@"mp3"];
+  soundNG = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURLNG error:NULL];
+  [soundNG prepareToPlay];
+
   
 }
+
+
+
+
+
+// アプリ終了時に呼ばれる(*既存関数)
+- (void)viewDidDisappear:(BOOL)animated
+{
+//  [bgmPlay release];
+//  [bgmClear release];
+//  [soundFlip release];
+//  [soundOK release];
+//  [soundNG release];
+}
+
 
 
 
