@@ -168,7 +168,7 @@
   NSURL *bgmURLPlay = [[NSBundle mainBundle] URLForResource:@"291" withExtension:@"mp3"];
   bgmPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:bgmURLPlay error:NULL];
   [bgmPlay prepareToPlay];
-  bgmPlay.volume = 0.6;
+  bgmPlay.volume = 0.4;
   bgmPlay.numberOfLoops = -1; // 再生回数 -1:ループ再生
   
   [bgmPlay play]; // 再生開始
