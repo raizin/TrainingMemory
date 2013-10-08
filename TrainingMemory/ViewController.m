@@ -100,7 +100,7 @@
 // カードレイヤの消去処理
 -(void)eraseCards
 {
-  [selectedLayer1 removeFromSuperlayer]; // レイヤーを親レイヤーから削除
+  [selectedLayer1 removeFromSuperlayer]; // 親レイヤーから削除
   [selectedLayer2 removeFromSuperlayer];
   selectedLayer1.zPosition = 0;
   selectedLayer2.zPosition = 0;
@@ -208,6 +208,7 @@
   NSURL *soundURLFlip = [[NSBundle mainBundle] URLForResource:@"soundFlip" withExtension:@"mp3"];
   soundFlip = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURLFlip error:NULL];
   [soundFlip prepareToPlay];
+  soundFlip.volume = 0.3;
   
   // サウンド再生 (正解 効果音)
   NSURL *soundURLOK = [[NSBundle mainBundle] URLForResource:@"soundOK" withExtension:@"mp3"];
