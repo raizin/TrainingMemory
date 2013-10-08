@@ -72,6 +72,9 @@
 - (void)judgeErase
 {
   if ([selectedLayer1.name isEqualToString:selectedLayer2.name]) {
+    
+    [soundOK play];
+    
     [CATransaction begin];
     [CATransaction setAnimationDuration:1.0];
     selectedLayer1.transform = CATransform3DMakeScale(2.0, 2.0, 1.0);
@@ -81,6 +84,9 @@
     [CATransaction commit];
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(eraseCards) userInfo:nil repeats:NO];
   } else {
+    
+    [soundNG play];
+    
     [self flipLayer:selectedLayer1];
     [self flipLayer:selectedLayer2];
     selectedLayer1.zPosition = 0;
