@@ -68,6 +68,7 @@
   }
 }
 
+
 // カードの整合性判定からカードレイヤー削除へ (※自作)
 - (void)judgeErase
 {
@@ -101,8 +102,24 @@
 {
   [selectedLayer1 removeFromSuperlayer]; // レイヤーを親レイヤーから削除
   [selectedLayer2 removeFromSuperlayer];
+  selectedLayer1.zPosition = 0;
+  selectedLayer2.zPosition = 0;
   selectedLayer1 = nil;
   selectedLayer2 = nil;
+  
+  // use debug
+//  NSLog(@"sublayers count = %d",[self.view.layer.sublayers count]);
+  
+  
+  //カードがすべて揃った（無くなった）ときのサウンドコントロール
+  if ([self.view.layer.sublayers count] == 2) {
+    [bgmPlay stop];
+    [bgmClear play];
+  }
+  
+  
+  
+  
 }
 
 

@@ -23,6 +23,7 @@
 		5EEEAEE218045E18007A2BFE /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEE118045E18007A2BFE /* .gitattributes */; };
 		5EEEAEE418046144007A2BFE /* soundNG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEE318046144007A2BFE /* soundNG.mp3 */; };
 		5EEEAEE618046153007A2BFE /* soundOK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEE518046153007A2BFE /* soundOK.mp3 */; };
+		5EEEAEE818048A0E007A2BFE /* bgmClear.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEE718048A0E007A2BFE /* bgmClear.mp3 */; };
 		5EF6933017F74AEA0090B9FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6932F17F74AEA0090B9FE /* Foundation.framework */; };
 		5EF6933217F74AEA0090B9FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6933117F74AEA0090B9FE /* CoreGraphics.framework */; };
 		5EF6933417F74AEA0090B9FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EF6933317F74AEA0090B9FE /* UIKit.framework */; };
@@ -65,6 +66,7 @@
 		5EEEAEE118045E18007A2BFE /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		5EEEAEE318046144007A2BFE /* soundNG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundNG.mp3; sourceTree = "<group>"; };
 		5EEEAEE518046153007A2BFE /* soundOK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundOK.mp3; sourceTree = "<group>"; };
+		5EEEAEE718048A0E007A2BFE /* bgmClear.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmClear.mp3; sourceTree = "<group>"; };
 		5EF6932C17F74AEA0090B9FE /* TrainingMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF6932F17F74AEA0090B9FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5EF6933117F74AEA0090B9FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +163,7 @@
 		5EF6933617F74AEA0090B9FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EEEAEE718048A0E007A2BFE /* bgmClear.mp3 */,
 				5EEEAEE518046153007A2BFE /* soundOK.mp3 */,
 				5EEEAEE318046144007A2BFE /* soundNG.mp3 */,
 				5EEEAEDD18045B63007A2BFE /* 291.mp3 */,
@@ -285,6 +288,7 @@
 				5EEEAED217FEE6C7007A2BFE /* card2.png in Resources */,
 				5EEEAEE418046144007A2BFE /* soundNG.mp3 in Resources */,
 				5EEEAED517FEE6C7007A2BFE /* card6.png in Resources */,
+				5EEEAEE818048A0E007A2BFE /* bgmClear.mp3 in Resources */,
 				5EEEAEDE18045B63007A2BFE /* 291.mp3 in Resources */,
 				5EEEAED017FEE6C7007A2BFE /* card_top.png in Resources */,
 				5EEEAEE618046153007A2BFE /* soundOK.mp3 in Resources */,
