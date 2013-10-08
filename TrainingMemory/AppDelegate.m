@@ -12,6 +12,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  //サウンド再生の設定
+  AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+  [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:NULL];
+  [audioSession setActive:YES error:NULL];
+  
+  
     // Override point for customization after application launch.
     return YES;
 }
