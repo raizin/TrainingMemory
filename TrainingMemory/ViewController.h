@@ -13,6 +13,15 @@
 @interface ViewController : UIViewController {
   CALayer *selectedLayer1;
   CALayer *selectedLayer2;
+  
+  
+  // オーディオ再生用定義
+  AVAudioPlayer *bgmPlay; // プレイ中 BGM
+  AVAudioPlayer *bgmClear; // クリア時のBGM
+  AVAudioPlayer *soundFlip; // カードめくり 効果音
+  AVAudioPlayer *soundOK; // 正解 効果音
+  AVAudioPlayer *soundNG; // NG 効果音
+  
 }
 
 @end
