@@ -165,7 +165,7 @@
 
   
   // サウンド再生 (プレイ中 BGM)
-  NSURL *bgmURLPlay = [[NSBundle mainBundle] URLForResource:@"MozCD5-01" withExtension:@"mp3"];
+  NSURL *bgmURLPlay = [[NSBundle mainBundle] URLForResource:@"291" withExtension:@"mp3"];
   bgmPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:bgmURLPlay error:NULL];
   [bgmPlay prepareToPlay];
   bgmPlay.volume = 0.6;
