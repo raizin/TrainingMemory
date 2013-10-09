@@ -112,7 +112,7 @@
   
   
   //カードがすべて揃った（無くなった）ときのサウンドコントロール
-  if ([self.view.layer.sublayers count] == 2) {
+  if ([self.view.layer.sublayers count] == 0) {
     [bgmPlay stop];
     [bgmClear play];
   }
@@ -219,6 +219,7 @@
   // サウンド再生 (NG 効果音)
   NSURL *soundURLNG = [[NSBundle mainBundle] URLForResource:@"soundNG" withExtension:@"mp3"];
   soundNG = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURLNG error:NULL];
+  soundNG.volume = 0.6;
   [soundNG prepareToPlay];
 
   

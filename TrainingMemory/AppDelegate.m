@@ -8,15 +8,25 @@
 
 #import "AppDelegate.h"
 
+#import "TitleViewController.h"
+
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   
-  //サウンド再生の設定
+  // サウンド再生の設定
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
   [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:NULL];
   [audioSession setActive:YES error:NULL];
+  
+  
+  // タイトル画面の追加
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  TitleViewController *titleCtl = [[TitleViewController alloc] initWithNibName:@"TitleViewController" bundle:nil];
+  self.window.rootViewController = titleCtl;
+//  [titleCtl release];
   
   
     // Override point for customization after application launch.
