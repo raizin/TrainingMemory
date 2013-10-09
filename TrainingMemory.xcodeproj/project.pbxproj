@@ -12,6 +12,8 @@
 		5E2A2C7F180599B400B04C48 /* TitleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A2C7D180599B400B04C48 /* TitleViewController.xib */; };
 		5E2A2C811805A78C00B04C48 /* startBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A2C801805A78C00B04C48 /* startBtn.png */; };
 		5E2A2C861805A82A00B04C48 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A2C841805A82A00B04C48 /* ViewController.xib */; };
+		5E2A2C8A1805AEEE00B04C48 /* SumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2A2C881805AEEE00B04C48 /* SumViewController.m */; };
+		5E2A2C8B1805AEEE00B04C48 /* SumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A2C891805AEEE00B04C48 /* SumViewController.xib */; };
 		5EEEAEC617FC8DC1007A2BFE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */; };
 		5EEEAEC817FC99E6007A2BFE /* bg01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEC717FC99E6007A2BFE /* bg01.png */; };
 		5EEEAED017FEE6C7007A2BFE /* card_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEC917FEE6C7007A2BFE /* card_top.png */; };
@@ -61,6 +63,9 @@
 		5E2A2C7D180599B400B04C48 /* TitleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleViewController.xib; sourceTree = "<group>"; };
 		5E2A2C801805A78C00B04C48 /* startBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startBtn.png; sourceTree = "<group>"; };
 		5E2A2C841805A82A00B04C48 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		5E2A2C871805AEEE00B04C48 /* SumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumViewController.h; sourceTree = "<group>"; };
+		5E2A2C881805AEEE00B04C48 /* SumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumViewController.m; sourceTree = "<group>"; };
+		5E2A2C891805AEEE00B04C48 /* SumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SumViewController.xib; sourceTree = "<group>"; };
 		5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5EEEAEC717FC99E6007A2BFE /* bg01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg01.png; sourceTree = "<group>"; };
 		5EEEAEC917FEE6C7007A2BFE /* card_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_top.png; sourceTree = "<group>"; };
@@ -169,6 +174,9 @@
 				5E2A2C761805927700B04C48 /* TitleViewController.h */,
 				5E2A2C771805927700B04C48 /* TitleViewController.m */,
 				5E2A2C7D180599B400B04C48 /* TitleViewController.xib */,
+				5E2A2C871805AEEE00B04C48 /* SumViewController.h */,
+				5E2A2C881805AEEE00B04C48 /* SumViewController.m */,
+				5E2A2C891805AEEE00B04C48 /* SumViewController.xib */,
 				5EF6934717F74AEA0090B9FE /* Images.xcassets */,
 				5EF6933617F74AEA0090B9FE /* Supporting Files */,
 			);
@@ -295,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2A2C8B1805AEEE00B04C48 /* SumViewController.xib in Resources */,
 				5EEEAED317FEE6C7007A2BFE /* card3.png in Resources */,
 				5EF6934817F74AEA0090B9FE /* Images.xcassets in Resources */,
 				5EEEAED417FEE6C7007A2BFE /* card4.png in Resources */,
@@ -336,6 +345,7 @@
 			files = (
 				5EF6934617F74AEA0090B9FE /* ViewController.m in Sources */,
 				5E2A2C781805927700B04C48 /* TitleViewController.m in Sources */,
+				5E2A2C8A1805AEEE00B04C48 /* SumViewController.m in Sources */,
 				5EF6934017F74AEA0090B9FE /* AppDelegate.m in Sources */,
 				5EF6933C17F74AEA0090B9FE /* main.m in Sources */,
 			);
