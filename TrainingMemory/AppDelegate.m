@@ -24,7 +24,7 @@
   
   // タイトル画面の追加
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  TitleViewController *titleCtl = [[TitleViewController alloc] initWithNibName:@"TitleViewController" bundle:nil];
+  TitleViewController *titleCtl = [[TitleViewController alloc] init];
   self.window.rootViewController = titleCtl;
 //  [titleCtl release];
   

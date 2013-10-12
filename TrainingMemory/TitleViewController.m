@@ -49,7 +49,7 @@
 
 - (void)showPlayView
 {
-  ViewController *playCtl = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+  ViewController *playCtl = [[ViewController alloc]init];
   playCtl.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   //  [self presentModalViewController:playController animated:YES];
   [self presentViewController:playCtl animated:YES completion:nil];

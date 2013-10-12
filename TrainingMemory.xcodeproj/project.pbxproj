@@ -9,11 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E2A2C781805927700B04C48 /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2A2C771805927700B04C48 /* TitleViewController.m */; };
 		5E2A2C7A1805968500B04C48 /* bgStart.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A2C791805968500B04C48 /* bgStart.png */; };
-		5E2A2C7F180599B400B04C48 /* TitleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A2C7D180599B400B04C48 /* TitleViewController.xib */; };
 		5E2A2C811805A78C00B04C48 /* startBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A2C801805A78C00B04C48 /* startBtn.png */; };
-		5E2A2C861805A82A00B04C48 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A2C841805A82A00B04C48 /* ViewController.xib */; };
 		5EE4916C180958F700B7706F /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4916A180958F700B7706F /* ResultViewController.m */; };
-		5EE4916D180958F700B7706F /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE4916B180958F700B7706F /* ResultViewController.xib */; };
 		5EEEAEC617FC8DC1007A2BFE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */; };
 		5EEEAEC817FC99E6007A2BFE /* bg01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEC717FC99E6007A2BFE /* bg01.png */; };
 		5EEEAED017FEE6C7007A2BFE /* card_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EEEAEC917FEE6C7007A2BFE /* card_top.png */; };
@@ -60,12 +57,9 @@
 		5E2A2C761805927700B04C48 /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
 		5E2A2C771805927700B04C48 /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 		5E2A2C791805968500B04C48 /* bgStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgStart.png; sourceTree = "<group>"; };
-		5E2A2C7D180599B400B04C48 /* TitleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleViewController.xib; sourceTree = "<group>"; };
 		5E2A2C801805A78C00B04C48 /* startBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startBtn.png; sourceTree = "<group>"; };
-		5E2A2C841805A82A00B04C48 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		5EE49169180958F700B7706F /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		5EE4916A180958F700B7706F /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
-		5EE4916B180958F700B7706F /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		5EEEAEC517FC8DC1007A2BFE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5EEEAEC717FC99E6007A2BFE /* bg01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg01.png; sourceTree = "<group>"; };
 		5EEEAEC917FEE6C7007A2BFE /* card_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_top.png; sourceTree = "<group>"; };
@@ -170,13 +164,10 @@
 				5EF6933F17F74AEA0090B9FE /* AppDelegate.m */,
 				5EF6934417F74AEA0090B9FE /* ViewController.h */,
 				5EF6934517F74AEA0090B9FE /* ViewController.m */,
-				5E2A2C841805A82A00B04C48 /* ViewController.xib */,
 				5E2A2C761805927700B04C48 /* TitleViewController.h */,
 				5E2A2C771805927700B04C48 /* TitleViewController.m */,
-				5E2A2C7D180599B400B04C48 /* TitleViewController.xib */,
 				5EE49169180958F700B7706F /* ResultViewController.h */,
 				5EE4916A180958F700B7706F /* ResultViewController.m */,
-				5EE4916B180958F700B7706F /* ResultViewController.xib */,
 				5EF6934717F74AEA0090B9FE /* Images.xcassets */,
 				5EF6933617F74AEA0090B9FE /* Supporting Files */,
 			);
@@ -317,10 +308,7 @@
 				5EEEAEE818048A0E007A2BFE /* bgmClear.mp3 in Resources */,
 				5EEEAEDE18045B63007A2BFE /* 291.mp3 in Resources */,
 				5E2A2C811805A78C00B04C48 /* startBtn.png in Resources */,
-				5E2A2C7F180599B400B04C48 /* TitleViewController.xib in Resources */,
-				5EE4916D180958F700B7706F /* ResultViewController.xib in Resources */,
 				5EEEAED017FEE6C7007A2BFE /* card_top.png in Resources */,
-				5E2A2C861805A82A00B04C48 /* ViewController.xib in Resources */,
 				5EEEAEE618046153007A2BFE /* soundOK.mp3 in Resources */,
 				5EEEAEE218045E18007A2BFE /* .gitattributes in Resources */,
 				5EEEAEE018045DC4007A2BFE /* .gitignore in Resources */,
