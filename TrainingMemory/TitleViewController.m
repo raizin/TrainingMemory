@@ -20,7 +20,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  self.view.layer.contents = (id)[UIImage imageNamed:@"start_bg_img.png"].CGImage;
+  self.view.layer.contents = (id)[UIImage imageNamed:@"bgStart.png"].CGImage;
   
   UIButton *startBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   startBtn.frame = CGRectMake(64, 340, 191, 52);
