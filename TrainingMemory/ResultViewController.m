@@ -14,6 +14,19 @@
 
 @implementation ResultViewController
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  self.view.layer.contents = (id)[UIImage imageNamed:@"bg01.png"].CGImage;
+  
+//  UIButton *startBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//  startBtn.frame = CGRectMake(64, 340, 191, 52);
+//  [startBtn setImage:[UIImage imageNamed:@"startBtn.png"] forState:UIControlStateNormal];
+//  [startBtn addTarget:self action:@selector(showPlayView) forControlEvents:UIControlEventTouchUpInside];
+//  [self.view addSubview:startBtn];
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

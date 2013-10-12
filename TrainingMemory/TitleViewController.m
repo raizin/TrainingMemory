@@ -22,11 +22,29 @@
 {
   self.view.layer.contents = (id)[UIImage imageNamed:@"bgStart.png"].CGImage;
   
-  UIButton *startBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  startBtn.frame = CGRectMake(64, 340, 191, 52);
-  [startBtn setImage:[UIImage imageNamed:@"startBtn.png"] forState:UIControlStateNormal];
-  [startBtn addTarget:self action:@selector(showPlayView) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:startBtn];
+  UIButton *easyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  UIButton *normBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  UIButton *hardBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  
+  // button width
+  int btnW = 100;
+
+//startBtn.frame = CGRectMake(64, 340, 191, 52);// x y w h
+  easyBtn.frame = CGRectMake([self arignCenter:btnW], 270, btnW, 26);// x y w h
+  [easyBtn setImage:[UIImage imageNamed:@"startBtn.png"] forState:UIControlStateNormal];
+  [easyBtn addTarget:self action:@selector(showPlayView) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:easyBtn];
+
+  normBtn.frame = CGRectMake([self arignCenter:btnW], 300, btnW, 26);// x y w h
+  [normBtn setImage:[UIImage imageNamed:@"startBtn.png"] forState:UIControlStateNormal];
+  [normBtn addTarget:self action:@selector(showPlayView) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:normBtn];
+  
+  hardBtn.frame = CGRectMake([self arignCenter:btnW], 330, btnW, 26);// x y w h
+  [hardBtn setImage:[UIImage imageNamed:@"startBtn.png"] forState:UIControlStateNormal];
+  [hardBtn addTarget:self action:@selector(showPlayView) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:hardBtn];
+  
 }
 
 - (void)showPlayView
@@ -35,8 +53,24 @@
   playCtl.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   //  [self presentModalViewController:playController animated:YES];
   [self presentViewController:playCtl animated:YES completion:nil];
-//  [playCtl release];
+  //  [playCtl release];
 }
+
+
+
+//中央寄せ用 X座標算出
+- (int)arignCenter:(int)btnW
+{
+  //画面情報(横幅)取得
+  UIScreen *sc = [UIScreen mainScreen];
+  CGRect rect = sc.bounds;
+  
+//  NSLog(@"%f",rect.size.width);
+  
+  return ( rect.size.width - btnW ) / 2;
+}
+
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
