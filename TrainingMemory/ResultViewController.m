@@ -1,18 +1,18 @@
 //
-//  SumViewController.m
+//  ResultViewController.m
 //  TrainingMemory
 //
-//  Created by z on 2013/10/10.
+//  Created by z on 2013/10/12.
 //  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
 //
 
-#import "SumViewController.h"
+#import "ResultViewController.h"
 
-@interface SumViewController ()
+@interface ResultViewController ()
 
 @end
 
-@implementation SumViewController
+@implementation ResultViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
