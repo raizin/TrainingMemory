@@ -32,24 +32,36 @@
 //startBtn.frame = CGRectMake(64, 340, 191, 52);// x y w h
   easyBtn.frame = CGRectMake([self arignCenter:btnW], 270, btnW, 26);// x y w h
   [easyBtn setImage:[UIImage imageNamed:@"startBtn.png"] forState:UIControlStateNormal];
-  [easyBtn addTarget:self action:@selector(showPlayView) forControlEvents:UIControlEventTouchUpInside];
+  [easyBtn addTarget:self action:@selector(showPlayView:) forControlEvents:UIControlEventTouchUpInside];
+  easyBtn.tag = 1;
   [self.view addSubview:easyBtn];
 
   normBtn.frame = CGRectMake([self arignCenter:btnW], 300, btnW, 26);// x y w h
   [normBtn setImage:[UIImage imageNamed:@"startBtn.png"] forState:UIControlStateNormal];
-  [normBtn addTarget:self action:@selector(showPlayView) forControlEvents:UIControlEventTouchUpInside];
+  [normBtn addTarget:self action:@selector(showPlayView:) forControlEvents:UIControlEventTouchUpInside];
+  normBtn.tag = 2;
   [self.view addSubview:normBtn];
   
   hardBtn.frame = CGRectMake([self arignCenter:btnW], 330, btnW, 26);// x y w h
+  hardBtn.tag = 3;
   [hardBtn setImage:[UIImage imageNamed:@"startBtn.png"] forState:UIControlStateNormal];
-  [hardBtn addTarget:self action:@selector(showPlayView) forControlEvents:UIControlEventTouchUpInside];
+  [hardBtn addTarget:self action:@selector(showPlayView:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:hardBtn];
   
 }
 
-- (void)showPlayView
+- (void)showPlayView:(id)sender
 {
   ViewController *playCtl = [[ViewController alloc]init];
+  
+  //sender経由でボタン情報を取得
+  UIButton *btn = (UIButton *)sender;
+  
+  NSLog(@"%d", btn.tag);
+    
+  // 次のビューにボタン情報を送信
+  [playCtl setBtnType:[NSString stringWithFormat:@"%d",btn.tag]];
+  
   playCtl.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
   //  [self presentModalViewController:playController animated:YES];
   [self presentViewController:playCtl animated:YES completion:nil];

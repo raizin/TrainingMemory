@@ -24,4 +24,7 @@
   
 }
 
+// タイトルビューにて押したボタンの情報
+@property (nonatomic,copy) NSString *btnType;
+
 @end

@@ -15,6 +15,10 @@
 @implementation ViewController
 
 
+// タイトルビューにて押したボタンの情報
+@synthesize btnType;
+
+
 // カードの回転のための関数(※自作)
 - (void)flipLayer:(CALayer *)layer
 {
@@ -158,6 +162,21 @@
 // 画面が表示される直前に呼び出されるメソッド
 - (void)viewWillAppear:(BOOL)animated
 {
+
+  // ラベルを追加
+  UILabel *lb = [[UILabel alloc] init];
+  lb.frame = CGRectMake(10, 35, 200, 30);
+  lb.backgroundColor = [UIColor colorWithRed:0.0 green:0.3 blue:0.0 alpha:0.3];
+  lb.textColor = [UIColor blackColor];
+  lb.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+  lb.textAlignment = NSTextAlignmentCenter;
+  lb.text = btnType;  // 受け取ったFirstViewControllerの値を表示
+  [self.view addSubview:lb];
+  
+  
+  
+  
+  
   
   srand((unsigned int)time(NULL)); // 乱数の初期化
   
