@@ -20,26 +20,77 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  self.view.layer.contents = (id)[UIImage imageNamed:@"bgStart.png"].CGImage;
+  self.view.layer.contents = (id)[UIImage imageNamed:@"bg01.png"].CGImage;
   
   
   /*** タイトル文字列の表示 ここから ***/
-  UILabel *title1 =  [[UILabel alloc] initWithFrame:CGRectMake(30,100,100,30)]; // x y w h
+
+  //画面情報(横幅)取得
+  UIScreen *sc = [UIScreen mainScreen];
+  CGRect rect = sc.bounds;
+  int fullw = rect.size.width;
+
+
+  // 影の定義
+  NSShadow *shadow2 = [[NSShadow alloc] init];
+  shadow2.shadowColor = [UIColor grayColor];
+  shadow2.shadowBlurRadius = 0.0f;
+  shadow2.shadowOffset = CGSizeMake(1.5f, 3.0f); // x y
   
-  NSDictionary *stringAttributes1 = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0],// 薄い青
-                                     //NSFontAttributeName : [UIFont systemFontOfSize:24.0f],
-                                       NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f],
+  NSShadow *shadow3 = [[NSShadow alloc] init];
+  shadow3.shadowColor = [UIColor grayColor];
+  shadow3.shadowBlurRadius = 0.0f;
+  shadow3.shadowOffset = CGSizeMake(1.0f, 2.0f); // x y
+  
+  
+  //Title1(Simple)
+//  UILabel *title1 =  [[UILabel alloc] initWithFrame:CGRectMake(30,100,100,30)]; // x y w h
+//  NSDictionary *stringAttributes1 = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0],// 薄い青
+//                                       //NSFontAttributeName : [UIFont systemFontOfSize:24.0f],
+//                                       NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0f],
+//                                       NSStrokeColorAttributeName : [UIColor whiteColor],
+//                                       NSStrokeWidthAttributeName : @-4.0f };
+//  NSAttributedString *string1 = [[NSAttributedString alloc] initWithString:@"Simple" attributes:stringAttributes1];
+//  NSMutableAttributedString *mutableAttributedString1 = [[NSMutableAttributedString alloc] init];
+//  [mutableAttributedString1 appendAttributedString:string1];
+//  title1.attributedText = mutableAttributedString1;
+//  [self.view addSubview:title1];
+  
+  
+  //Title2
+  UILabel *title2 =  [[UILabel alloc] initWithFrame:CGRectMake(0,150,fullw,30)]; // x y w h
+  NSDictionary *stringAttributes2 = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.6 green:0.3 blue:1.0 alpha:1.0],// 紫
+                                       NSFontAttributeName : [UIFont fontWithName:@"Helvetica-Bold" size:24.0f],
                                        NSStrokeColorAttributeName : [UIColor whiteColor],
-                                       NSStrokeWidthAttributeName : @-4.0f };
-  NSAttributedString *string1 = [[NSAttributedString alloc] initWithString:@"Simple"
-                                                                attributes:stringAttributes1];
+                                       NSStrokeWidthAttributeName : @-4.0f,
+                                       NSKernAttributeName : @0.0f,
+                                       NSShadowAttributeName : shadow2 // 影
+                                       };
+  NSAttributedString *string2 = [[NSAttributedString alloc] initWithString:@"能力向上トレーニング" attributes:stringAttributes2];
+  NSMutableAttributedString *mutableAttributedString2 = [[NSMutableAttributedString alloc] init];
+  [mutableAttributedString2 appendAttributedString:string2];
+  title2.textAlignment = NSTextAlignmentCenter;
+  title2.attributedText = mutableAttributedString2;
+  [self.view addSubview:title2];
   
-  NSMutableAttributedString *mutableAttributedString1 = [[NSMutableAttributedString alloc] init];
-  [mutableAttributedString1 appendAttributedString:string1];
   
-  title1.attributedText = mutableAttributedString1;
-  
-  [self.view addSubview:title1];
+  //Title3
+  UILabel *title3 =  [[UILabel alloc] initWithFrame:CGRectMake(0,200,fullw,30)]; // x y w h
+  NSDictionary *stringAttributes3 = @{ NSForegroundColorAttributeName : [UIColor orangeColor],//
+                                       NSFontAttributeName : [UIFont fontWithName:@"Helvetica-Bold" size:20.0f],
+                                       NSStrokeColorAttributeName : [UIColor blackColor],
+                                       NSStrokeWidthAttributeName : @-2.0f,
+                                       NSKernAttributeName : @-0.5f,
+                                       NSShadowAttributeName : shadow3 // 影
+                                       };
+//NSAttributedString *string3 = [[NSAttributedString alloc] initWithString:@"第一弾 記憶力訓練" attributes:stringAttributes3];
+  NSAttributedString *string3 = [[NSAttributedString alloc] initWithString:@"Part I 画像記憶訓練" attributes:stringAttributes3];
+  NSMutableAttributedString *mutableAttributedString3 = [[NSMutableAttributedString alloc] init];
+  [mutableAttributedString3 appendAttributedString:string3];
+  title3.textAlignment = NSTextAlignmentCenter;
+  title3.attributedText = mutableAttributedString3;
+//title3.backgroundColor = [UIColor brownColor]; // label background
+  [self.view addSubview:title3];
   
   
   /*** タイトル文字列の表示 ここまで ***/
@@ -96,7 +147,7 @@
 
 
 // 中央寄せ用 X座標算出
-- (int)arignCenter:(int)btnW
+- (int)arignCenter:(int)w
 {
   //画面情報(横幅)取得
   UIScreen *sc = [UIScreen mainScreen];
@@ -104,33 +155,9 @@
   
 //  NSLog(@"%f",rect.size.width);
   
-  return ( rect.size.width - btnW ) / 2;
+  return ( rect.size.width - w ) / 2;
 }
 
-// ラベル文字列に縁取りする
-- (void)drawTextInRect:(id)fromLabel
-{
-  UILabel *label = fromLabel;
-  UIColor *OutlineColor = [[UIColor alloc]init];
-  CGFloat OutlineWidth = 0;
-  
-  CGSize shadowOffset = label.shadowOffset;
-  UIColor *txtColor = label.textColor;
-  
-  CGContextRef contextRef = UIGraphicsGetCurrentContext();
-  CGContextSetLineWidth(contextRef, OutlineWidth);
-  CGContextSetLineJoin(contextRef, kCGLineJoinRound);
-  
-  CGContextSetTextDrawingMode(contextRef, kCGTextStroke);
-  label.textColor = OutlineColor;
-//  drawTextInRect:CGRectInset([UIColor whiteColor], OutlineWidth, OutlineWidth)];
-  
-  CGContextSetTextDrawingMode(contextRef, kCGTextFill);
-  label.textColor = txtColor;
-//  [super drawTextInRect:CGRectInset(rect, OutlineWidth, OutlineWidth)];
-  
-  label.shadowOffset = shadowOffset;
-}
 
 
 
