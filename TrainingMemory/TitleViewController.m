@@ -22,6 +22,47 @@
 {
   self.view.layer.contents = (id)[UIImage imageNamed:@"bgStart.png"].CGImage;
   
+  
+  /*** タイトル文字列の表示 ここから ***/
+  UILabel *title1 =  [[UILabel alloc] initWithFrame:CGRectMake(30,100,100,30)]; // x y w h
+//  title1.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0]; // 薄い青
+//  title1.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f];
+//  title1.textAlignment = NSTextAlignmentCenter;
+//  title1.text = @"Simple";
+  
+  NSDictionary *stringAttributes1 = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0],// 薄い青
+                                     //NSFontAttributeName : [UIFont systemFontOfSize:24.0f],
+                                       NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f],
+                                       NSStrokeColorAttributeName : [UIColor whiteColor],
+                                       NSStrokeWidthAttributeName : @-4.0f };
+  NSAttributedString *string1 = [[NSAttributedString alloc] initWithString:@"Simple"
+                                                                attributes:stringAttributes1];
+  
+  
+//  NSDictionary *stringAttributes2 = @{ NSForegroundColorAttributeName : [UIColor redColor],
+//                                       NSFontAttributeName : [UIFont boldSystemFontOfSize:24.0f] };
+//  NSAttributedString *string2 = [[NSAttributedString alloc] initWithString:@"能力向上トレーニング"
+//                                                                attributes:stringAttributes2];
+  
+//  NSDictionary *stringAttributes3 = @{ NSForegroundColorAttributeName : [UIColor greenColor],
+//                                       NSFontAttributeName : [UIFont systemFontOfSize:14.0f] };
+//  NSAttributedString *string3 = [[NSAttributedString alloc] initWithString:@"789"
+//                                                                attributes:stringAttributes3];
+  
+  NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] init];
+  [mutableAttributedString appendAttributedString:string1];
+//  [mutableAttributedString appendAttributedString:string2];
+//  [mutableAttributedString appendAttributedString:string3];
+  
+  title1.attributedText = mutableAttributedString;
+  
+  [self.view addSubview:title1];
+  
+  
+  
+  
+  
+  /*** ボタンの表示 ここから ***/
   UIButton *easyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   UIButton *normBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   UIButton *hardBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -81,6 +122,32 @@
   
   return ( rect.size.width - btnW ) / 2;
 }
+
+// ラベル文字列に縁取りする
+- (void)drawTextInRect:(id)fromLabel
+{
+  UILabel *label = fromLabel;
+  UIColor *OutlineColor = [[UIColor alloc]init];
+  CGFloat OutlineWidth = 0;
+  
+  CGSize shadowOffset = label.shadowOffset;
+  UIColor *txtColor = label.textColor;
+  
+  CGContextRef contextRef = UIGraphicsGetCurrentContext();
+  CGContextSetLineWidth(contextRef, OutlineWidth);
+  CGContextSetLineJoin(contextRef, kCGLineJoinRound);
+  
+  CGContextSetTextDrawingMode(contextRef, kCGTextStroke);
+  label.textColor = OutlineColor;
+//  drawTextInRect:CGRectInset([UIColor whiteColor], OutlineWidth, OutlineWidth)];
+  
+  CGContextSetTextDrawingMode(contextRef, kCGTextFill);
+  label.textColor = txtColor;
+//  [super drawTextInRect:CGRectInset(rect, OutlineWidth, OutlineWidth)];
+  
+  label.shadowOffset = shadowOffset;
+}
+
 
 
 
