@@ -25,10 +25,6 @@
   
   /*** タイトル文字列の表示 ここから ***/
   UILabel *title1 =  [[UILabel alloc] initWithFrame:CGRectMake(30,100,100,30)]; // x y w h
-//  title1.textColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0]; // 薄い青
-//  title1.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f];
-//  title1.textAlignment = NSTextAlignmentCenter;
-//  title1.text = @"Simple";
   
   NSDictionary *stringAttributes1 = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:1.0],// 薄い青
                                      //NSFontAttributeName : [UIFont systemFontOfSize:24.0f],
@@ -38,27 +34,15 @@
   NSAttributedString *string1 = [[NSAttributedString alloc] initWithString:@"Simple"
                                                                 attributes:stringAttributes1];
   
+  NSMutableAttributedString *mutableAttributedString1 = [[NSMutableAttributedString alloc] init];
+  [mutableAttributedString1 appendAttributedString:string1];
   
-//  NSDictionary *stringAttributes2 = @{ NSForegroundColorAttributeName : [UIColor redColor],
-//                                       NSFontAttributeName : [UIFont boldSystemFontOfSize:24.0f] };
-//  NSAttributedString *string2 = [[NSAttributedString alloc] initWithString:@"能力向上トレーニング"
-//                                                                attributes:stringAttributes2];
-  
-//  NSDictionary *stringAttributes3 = @{ NSForegroundColorAttributeName : [UIColor greenColor],
-//                                       NSFontAttributeName : [UIFont systemFontOfSize:14.0f] };
-//  NSAttributedString *string3 = [[NSAttributedString alloc] initWithString:@"789"
-//                                                                attributes:stringAttributes3];
-  
-  NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] init];
-  [mutableAttributedString appendAttributedString:string1];
-//  [mutableAttributedString appendAttributedString:string2];
-//  [mutableAttributedString appendAttributedString:string3];
-  
-  title1.attributedText = mutableAttributedString;
+  title1.attributedText = mutableAttributedString1;
   
   [self.view addSubview:title1];
   
   
+  /*** タイトル文字列の表示 ここまで ***/
   
   
   
