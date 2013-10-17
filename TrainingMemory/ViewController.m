@@ -19,7 +19,7 @@
 @synthesize btnType;
 
 
-// カードの回転のための関数(※自作)
+// カードの回転(めくり)のための関数(※自作)
 - (void)flipLayer:(CALayer *)layer
 {
   [CATransaction begin];
